@@ -3,6 +3,7 @@ package com.lannstark.lec10;
 public class JavaBase {
 
   public JavaBase() {
+    System.out.println("javaBaseConstructor");
     System.out.println(getMember());
   }
 

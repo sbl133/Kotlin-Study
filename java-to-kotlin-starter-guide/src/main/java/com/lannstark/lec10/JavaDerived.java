@@ -4,6 +4,7 @@ public class JavaDerived extends JavaBase {
 
   public JavaDerived() {
     super();
+    System.out.println("JavaDerivedConstructor");
   }
 
   @Override
