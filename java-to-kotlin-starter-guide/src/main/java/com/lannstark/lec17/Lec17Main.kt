@@ -12,12 +12,26 @@ fun main() {
         Fruit("수박", 10000),
     )
 
-    val isApple = fun(fruit: Fruit): Boolean {
+    val isApple: (Fruit) -> Boolean = fun(fruit: Fruit): Boolean {
         return fruit.name == "사과"
     }
 
-    val isApple2 = {fruit: Fruit -> fruit.name == "사과"}
+    val isApple2 = { fruit: Fruit -> fruit.name == "사과" }
 
     isApple(fruits[0])
     isApple2.invoke(fruits[0])
+    filterFruits(fruits, isApple)
+    filterFruits(fruits) { it.name == "사과" }
+}
+
+private fun filterFruits(
+    fruits: List<Fruit>, filter: (Fruit) -> Boolean
+): List<Fruit> {
+    val results = mutableListOf<Fruit>()
+    for (fruit in fruits) {
+        if (filter(fruit)) {
+            results.add(fruit)
+        }
+    }
+    return results
 }
