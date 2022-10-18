@@ -49,5 +49,6 @@ fun main() {
 }
 
 private fun printNumbers(numbers: List<Int>) {
-
+    val mutableListOf = mutableListOf(100, 200)
+    val value = mutableListOf.toList()
 }
